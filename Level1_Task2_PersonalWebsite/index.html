@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waqar | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="logo">Waqar<span>.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1>Waqar</h1>
+      <h2 class="typing-text">Web Developer & AI Enthusiast</h2>
+      <p class="hero-desc">
+        I build clean, functional web applications and explore practical
+        AI-powered tools. Currently sharpening my skills through hands-on
+        projects and internships.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+    <div class="avatar-circle">
+        <img src="./my.jpg" alt="Waqar Ali">
+    </div>
+</div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm a recent high school graduate from Pakistan with a strong drive
+        to build a career in technology. My focus is web development —
+        from clean front-end interfaces to full-stack applications — and
+        I'm especially interested in combining that with AI-powered tools
+        to build practical, real-world products.
+      </p>
+      <p>
+        I learn by building. Rather than just studying concepts, I prefer
+        creating actual projects — portfolios, AI tools, dashboards — that
+        I can show, test, and improve. I'm currently exploring freelancing
+        and internships to gain real industry experience.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h3>5+</h3>
+        <p>Projects Built</p>
+      </div>
+      <div class="stat-box">
+        <h3>3</h3>
+        <p>Core Languages</p>
+      </div>
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Self-Driven Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills Section ===== -->
+  <section class="skills" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>HTML & CSS</h3>
+        <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <h3>JavaScript</h3>
+        <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚛️</div>
+        <h3>React & Vite</h3>
+        <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3>Tailwind CSS</h3>
+        <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+      </div>
+      <!-- <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <h3>Python / FastAPI</h3>
+        <div class="bar"><div class="bar-fill" style="width: 65%;"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <h3>AI Integration</h3>
+        <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section class="projects" id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-thumb">📋</div>
+
+      <h3>Kanban Task Board</h3>
+
+      <p>
+        A modern Kanban Board developed during my Syntecxhub Frontend
+        Development Internship using React.js. Users can create tasks,
+        assign priorities, drag and drop tasks between To Do, Doing,
+        and Done columns, delete tasks, and automatically save data
+        using LocalStorage. The application is fully responsive and
+        designed to provide an intuitive task management experience.
+      </p>
+
+      <div class="tags">
+        <span>React.js</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>LocalStorage</span>
+        <span>Drag & Drop API</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://internship-program-all-works-hpsv.vercel.app/" target="_blank" class="project-btn">
+          Live Demo
+        </a>
+
+        <a href="https://github.com/Waqar-5/NovaStackHub_Intership_Porgram_Tasks/tree/main/Level1_Task1_ContactForm" target="_blank" class="project-btn">
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-thumb">📬</div>
+
+      <h3>Contact Form Component</h3>
+
+      <p>
+        A responsive contact form built with HTML, CSS, and JavaScript,
+        featuring real-time form validation, a clean responsive layout,
+        and an intuitive user experience. Developed as part of my
+        frontend internship to strengthen DOM manipulation and form
+        validation skills.
+      </p>
+
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="project-links">
+        <a href="" target="_blank" class="project-btn">
+          Live Demo
+        </a>
+
+        <a href="YOUR_GITHUB_LINK" target="_blank" class="project-btn">
+          GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ===== Contact Section ===== -->
+ <section class="contact" id="contact">
+  <h2 class="section-title">Get In Touch</h2>
+
+  <p class="contact-sub">
+    Open to internships, freelance projects, and collaboration opportunities.
+  </p>
+
+  <div class="contact-links">
+    
+    <a href="mailto:wa5134810@gmail.com" class="contact-link">
+      <i class="fas fa-envelope"></i>
+      Email
+    </a>
+
+    <a href="https://www.linkedin.com/in/waqar-ali-997b962b5/" target="_blank" class="contact-link">
+      <i class="fab fa-linkedin"></i>
+      LinkedIn
+    </a>
+
+    <a href="https://github.com/Waqar-5" target="_blank" class="contact-link">
+      <i class="fab fa-github"></i>
+      GitHub
+    </a>
+
+  </div>
+</section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Waqar. Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
