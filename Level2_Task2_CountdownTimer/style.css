@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1d3a6e 0%, #0b1730 70%);
+  padding: 24px;
+}
+
+.app-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 44px 36px;
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.event-label {
+  color: #14b8c4;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Countdown Grid ===== */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-label {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.expired-message {
+  color: #4ade80;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== Custom Form ===== */
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.custom-form input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.custom-form input::placeholder {
+  color: #94a3b8;
+}
+
+.custom-form input:focus {
+  border-color: #14b8c4;
+}
+
+/* date input calendar icon visibility on dark bg */
+.custom-form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.custom-form button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #14b8c4, #1d3a6e);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.custom-form button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== Presets ===== */
+.quick-presets {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.preset-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-btn:hover {
+  background: rgba(20, 184, 196, 0.15);
+  border-color: #14b8c4;
+  color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 420px) {
+  .countdown-grid {
+    gap: 8px;
+  }
+
+  .time-value {
+    font-size: 24px;
+  }
+
+  .timer-card {
+    padding: 32px 22px;
+  }
+}

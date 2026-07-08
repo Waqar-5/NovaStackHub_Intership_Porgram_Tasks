@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown Timer | NovaStack Hub Internship Task</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <div class="timer-card">
+
+      <h1 class="title">Countdown Timer</h1>
+      <p class="event-label" id="eventLabel">New Year 2027</p>
+
+      <div class="countdown-grid">
+        <div class="time-box">
+          <span class="time-value" id="days">00</span>
+          <span class="time-label">Days</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="hours">00</span>
+          <span class="time-label">Hours</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="minutes">00</span>
+          <span class="time-label">Minutes</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="seconds">00</span>
+          <span class="time-label">Seconds</span>
+        </div>
+      </div>
+
+      <p class="expired-message hidden" id="expiredMessage">🎉 The countdown has ended!</p>
+
+      <form id="customForm" class="custom-form">
+        <input type="text" id="eventName" placeholder="Event name (e.g. My Birthday)" />
+        <input type="datetime-local" id="eventDate" required />
+        <button type="submit">Set Countdown</button>
+      </form>
+
+      <div class="quick-presets">
+        <button class="preset-btn" data-preset="newyear">New Year</button>
+        <button class="preset-btn" data-preset="1hour">+1 Hour</button>
+        <button class="preset-btn" data-preset="1day">+1 Day</button>
+        <button class="preset-btn" data-preset="1week">+1 Week</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
