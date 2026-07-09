@@ -1,73 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather App | NovaStack Hub Internship Task</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <div class="app-wrapper">
-    <div class="weather-card">
-
-      <form id="searchForm" class="search-bar">
-        <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off" />
-        <button type="submit" aria-label="Search">🔍</button>
-      </form>
-
-      <div id="loadingState" class="state-message hidden">Loading weather data...</div>
-      <div id="errorState" class="state-message error hidden">City not found. Please try again.</div>
-
-      <div id="weatherContent" class="weather-content hidden">
-        <p class="location" id="locationName">Sukkur, Pakistan</p>
-        <p class="date" id="currentDate">Monday, June 22</p>
-
-        <div class="main-weather">
-          <div class="weather-icon" id="weatherIcon">☀️</div>
-          <div class="temp" id="temperature">32°</div>
-        </div>
-        <p class="description" id="weatherDescription">Clear Sky</p>
-
-        <div class="details-grid">
-          <div class="detail-box">
-            <span class="detail-icon">💧</span>
-            <p class="detail-label">Humidity</p>
-            <p class="detail-value" id="humidity">45%</p>
-          </div>
-          <div class="detail-box">
-            <span class="detail-icon">💨</span>
-            <p class="detail-label">Wind Speed</p>
-            <p class="detail-value" id="windSpeed">12 km/h</p>
-          </div>
-          <div class="detail-box">
-            <span class="detail-icon">🌡️</span>
-            <p class="detail-label">Feels Like</p>
-            <p class="detail-value" id="feelsLike">34°</p>
-          </div>
-          <div class="detail-box">
-            <span class="detail-icon">👁️</span>
-            <p class="detail-label">Visibility</p>
-            <p class="detail-value" id="visibility">10 km</p>
-          </div>
-        </div>
-
-        <div class="unit-toggle">
-          <button id="celsiusBtn" class="unit-btn active">°C</button>
-          <button id="fahrenheitBtn" class="unit-btn">°F</button>
-        </div>
-      </div>
-
-      <p class="api-note">
-        Note: This demo uses sample data by default. Add your free
-        <a href="https://openweathermap.org/api" target="_blank" rel="noopener">OpenWeatherMap</a>
-        API key in <code>script.js</code> to fetch live weather.
-      </p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>WeatherLens</title>
+    <meta name="description" content="Premium weather forecast app — live data, 5-day forecast, interactive maps, and AI-powered insights." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="WeatherLens" />
+    <meta property="og:description" content="Premium weather forecast app — live data, 5-day forecast, interactive maps." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WeatherLens" />
+    <meta name="twitter:description" content="Premium weather forecast app — live data, 5-day forecast, interactive maps." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
