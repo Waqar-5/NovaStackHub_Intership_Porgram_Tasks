@@ -25,3 +25,7 @@ export const reverseGeo = async (lat, lon) => {
     const { data } = await weatherApi.get(`${GEO_URL}/reverse`, { params: { lat, lon, limit: 1 } });
     return data;
 };
+
+
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+console.log("API KEY:", API_KEY);
