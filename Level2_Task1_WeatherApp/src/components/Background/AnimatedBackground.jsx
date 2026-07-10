@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import gsap from 'gsap';
 import { useWeather } from '@/hooks/useWeather';
 import { useSettings } from '@/hooks/useSettings';
@@ -23,6 +23,25 @@ export const AnimatedBackground = () => {
         });
         return () => ctx.revert();
     }, [animations, weatherCode, isDay]);
+    // Precompute random particle positions once per weather condition
+    // instead of on every render (avoids rebuilding ~100 DOM nodes per re-render)
+    const rainDrops = useMemo(() => Array.from({ length: 50 }).map(() => ({
+        left: `${Math.random() * 100}vw`,
+        animationDuration: `${0.5 + Math.random() * 0.5}s`,
+        animationDelay: `${Math.random() * 2}s`,
+    })), [weatherCode >= 300 && weatherCode < 600]);
+    const snowFlakes = useMemo(() => Array.from({ length: 50 }).map(() => ({
+        left: `${Math.random() * 100}vw`,
+        animationDuration: `${3 + Math.random() * 5}s`,
+        animationDelay: `${Math.random() * 5}s`,
+        opacity: 0.2 + Math.random() * 0.8,
+    })), [weatherCode >= 600 && weatherCode < 700]);
+    const stars = useMemo(() => Array.from({ length: 100 }).map(() => ({
+        left: `${Math.random() * 100}vw`,
+        top: `${Math.random() * 100}vh`,
+        animationDuration: `${2 + Math.random() * 4}s`,
+        animationDelay: `${Math.random() * 4}s`,
+    })), [!isDay && weatherCode === 800]);
     const getBackgroundStyle = () => {
         if (weatherCode >= 200 && weatherCode < 300) {
             // Thunderstorm
@@ -53,29 +72,15 @@ export const AnimatedBackground = () => {
           {weatherCode >= 200 && weatherCode < 300 && (<div className="absolute inset-0 bg-white/10 animate-lightning pointer-events-none"/>)}
           
           {(weatherCode >= 300 && weatherCode < 600) && (<div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-              {Array.from({ length: 50 }).map((_, i) => (<div key={i} className="absolute w-0.5 h-6 bg-white/40 animate-rain" style={{
-                        left: `${Math.random() * 100}vw`,
-                        animationDuration: `${0.5 + Math.random() * 0.5}s`,
-                        animationDelay: `${Math.random() * 2}s`
-                    }}/>))}
+              {rainDrops.map((drop, i) => (<div key={i} className="absolute w-0.5 h-6 bg-white/40 animate-rain" style={drop}/>))}
             </div>)}
 
           {weatherCode >= 600 && weatherCode < 700 && (<div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
-              {Array.from({ length: 50 }).map((_, i) => (<div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-snow" style={{
-                        left: `${Math.random() * 100}vw`,
-                        animationDuration: `${3 + Math.random() * 5}s`,
-                        animationDelay: `${Math.random() * 5}s`,
-                        opacity: 0.2 + Math.random() * 0.8
-                    }}/>))}
+              {snowFlakes.map((flake, i) => (<div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-snow" style={flake}/>))}
             </div>)}
 
           {!isDay && weatherCode === 800 && (<div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {Array.from({ length: 100 }).map((_, i) => (<div key={i} className="absolute w-1 h-1 bg-white rounded-full animate-twinkle" style={{
-                        left: `${Math.random() * 100}vw`,
-                        top: `${Math.random() * 100}vh`,
-                        animationDuration: `${2 + Math.random() * 4}s`,
-                        animationDelay: `${Math.random() * 4}s`,
-                    }}/>))}
+              {stars.map((star, i) => (<div key={i} className="absolute w-1 h-1 bg-white rounded-full animate-twinkle" style={star}/>))}
             </div>)}
         </>)}
     </div>);
